@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="{{ site.baseurl }}/">
+          <h2 class="nav-title">{{ site.title }}</h2>
+        </a>
+        <ul>
+          <li><a href="{{ '/gallery' | prepend: site.baseurl }}">Картинки</a></li>
+          <li><a href="{{ site.baseurl }}/">Посты</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <span>
+        Зопилено на Jekyll. Оригинальная тема — <a href="https://github.com/chesterhow/tale/">Tale</a>.
+      </span>
+    </footer>
+  </body>
+</html>
