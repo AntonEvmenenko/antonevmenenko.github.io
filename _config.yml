@@ -1,4 +1,6 @@
 # Site settings
+default_locale: "ru"
+
 title:          Техноблог Антона
 description:    "Minimal Jekyll theme for storytellers"
 baseurl:        "/blog"
