@@ -1,6 +1,7 @@
 # Site settings
 title:          Техноблог Антона
 description:    "Minimal Jekyll theme for storytellers"
+baseurl:        "/blog"
 url:            "https://chesterhow.github.io"
 
 # Author
