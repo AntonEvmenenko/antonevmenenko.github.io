@@ -3,7 +3,7 @@ default_locale: "ru"
 
 title:          Техноблог Антона
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/blog"
+baseurl:        ""
 url:            "https://chesterhow.github.io"
 
 # Author
