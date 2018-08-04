@@ -13,8 +13,10 @@ layout: default
   <div class="post-line"></div>
 
   {{ content }}
-
+  
 </div>
+
+{% include disqus.html %}
 
 <div class="pagination">
   {% if page.next.url %}
