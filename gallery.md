@@ -46,19 +46,6 @@ permalink: /gallery/
 {% include clickableImage.html url="assets/images/gallery/3d_printed_stuff/3d_printed_stuff_9.jpg" %}
 {% include clickableImage.html url="assets/images/gallery/3d_printed_stuff/3d_printed_stuff_10.jpg" %}
 
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_1.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_2.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_3.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_4.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_5.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_6.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_7.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_8.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_9.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_10.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_11.jpg" %}
-{% include clickableImage.html url="assets/images/gallery/3dconnexion/3dconnexion_12.jpg" %}
-
 {% include clickableImage.html url="assets/images/gallery/monitor_wallmount/monitor_wallmount_1.jpg" %}
 {% include clickableImage.html url="assets/images/gallery/monitor_wallmount/monitor_wallmount_2.jpg" %}
 {% include clickableImage.html url="assets/images/gallery/monitor_wallmount/monitor_wallmount_3.jpg" %}
