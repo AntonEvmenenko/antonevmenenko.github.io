@@ -27,4 +27,10 @@
 
   <!-- RSS -->
   {% feed_meta %}
+
+  <!-- Google Analytics -->
+  {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+  {% endif %}
+
 </head>
