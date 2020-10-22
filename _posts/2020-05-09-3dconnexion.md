@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "[WIP] Эргономичная версия 3DConnexion SpaceMouse Wireless."
+title: "3DConnexion SpaceMouse Wireless Ergonomic."
 author: "Антон"
 comments: true
+preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 ---
 
 ### Содержание
@@ -10,8 +11,10 @@ comments: true
 2. [Вступление](#intro)
 3. [Прототипирование](#prototyping)
 4. [3D сканирование](#3d_scanning)
-5. [Результат](#result)
-6. [ToDo List](#todolist)
+6. [Версия 0](#version_0)
+7. [Устранение проблем версии 0](#version_0_fix_problems)
+8. [Версия 1](#version_1)
+9. [Рендеры финальной версии](#renders)
 
 ### Что такое 3DConnexion? <a name="what_is_3dconnexion"></a>
 
@@ -32,7 +35,7 @@ comments: true
 
 {% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/spacenavigator_control.jpg" %}
 
-Самое же интересное заключается в том, что этот манипулятор позволяет управлять всеми степенями свободы камеры *одновременно*. По сравнению с использованием просто мыши и клавиатуры, когда для того, чтобы переместить камеру из одного места в другое, да еще и повернуть ее, необходимо совершить кучу действий, шестиосевой манипулятор позволяет сделать то же самое всего за одно *движение*. Это очень удобно и экономит время. Минус: требуется привыкание к такому способу управления (порядка нескольких дней).
+Самое же интересное заключается в том, что этот манипулятор позволяет управлять всеми степенями свободы камеры *одновременно*. По сравнению с использованием просто мыши и клавиатуры, когда для того, чтобы переместить камеру из одного места в другое, да еще и повернуть ее, необходимо совершить кучу действий, шестиосевой манипулятор позволяет сделать то же самое *всего за одно движение*. Это очень удобно и экономит время. Минус: требуется привыкание к такому способу управления (порядка нескольких дней).
 
 ### Вступление <a name="intro"></a>
 
@@ -108,7 +111,7 @@ comments: true
 
 {% include stlViewer.html url="assets/stl/posts/2020-05-09-3dconnexion/stand_fixed.stl" %}
 
-### Результат <a name="result"></a>
+### Версия 0 <a name="version_0"></a>
 
 К сожалению, во время печати закончился белый пластик, поэтому маленький кусочек детали пришлось допечатать прозрачным пластиком :)
 
@@ -122,8 +125,72 @@ comments: true
 {% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_8.jpg" %}
 {% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_9.jpg" %}
 
-### ToDo List <a name="todolist"></a>
+Проблемы версии 0:
 
 1. Основание получилось слишком легким, поэтому, чтобы можно было пользоваться устройством, его необходимо приклеивать к столу на двухсторонний скотч. Необходимо как-то решить эту проблему: к примеру, можно попытаться утяжелить основание, сделав его полым, и залить внутрь что-то вроде смеси из эпоксидной смолы и металлических опилок.
 
-2. USB разъем раположен неудобно, необходимо перенести его к основанию устройства.
+2. USB разъем расположен неудобно, необходимо перенести его к основанию устройства.
+
+### Устранение проблем версии 0 <a name="version_0_fix_problems"></a>
+
+Итак, проблемой номер один является вес основания. К сожалению, мне не удалось найти в продаже металлические опилки, дабы, как описано в предыдущем пункте, использовать их для утяжеления; решил использовать вместо них стальные шарики диаметром 6 мм. От эпоксидной смолы в итоге также решил отказаться из-за ее возможной токсичности, вместо нее использовал [литьевой двухкомпонентный пищевой силикон](https://www.sylmasta.com/product/grade-400-rubber-for-clear-polyurethane-resins-400g).
+
+Образец получившегося "композитного" материала:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/infill_test.jpg" %}
+
+Далее, для того, чтобы поместить утяжелитель внутрь, необходимо сделать основание полым или же частично полым. Вначале я склонялся ко второму варианту, но потом понял, что первый во многих отношениях лучше. Использовать SolidWorks для этого не получилось: он и так неохотно работает с твердыми телами, полученными из мешей, а применить к такому телу операцию **shell** и вовсе оказалось непосильной задачей. Зато выручил Meshmixer. Интересная подробность: если просто сделать тело полым, то есть убрать из него весь материал, оставив только стенку, результатом будут два отдельных меша; чтобы этого не произошло, необходимо сделать хотя бы одно отверстие в этой стенке. Meshmixer умеет это делать автоматически.
+
+Так как основание теперь полое внутри, чтобы иметь доступ внутрь, необходимо сделать его разборным. Для соединения частей решил использовать винты и вплавляемые гайки.
+
+В последнюю очередь оптимизировал внешнюю поверхность основания, дабы угол нависания везде был больше 45 градусов. В противном случае слайсер генерирует для внешней поверхность поддержки, которые портят внешний вид, даже если напечатаны отдельным материалом. Было (красным цветом показаны места с углом нависания меньше 45 градусов):
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/external_supports_before.png" %}
+
+Стало:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/external_supports_after.png" %}
+
+Итоговые меши основания и крышки:
+
+{% include stlViewer.html url="assets/stl/posts/2020-05-09-3dconnexion/base_1.1.stl" %}
+{% include stlViewer.html url="assets/stl/posts/2020-05-09-3dconnexion/bottom_1.1.stl" %}
+
+### Версия 1 <a name="version_1"></a>
+
+Напечатал основание и крышку, установил вплавляемые гайки:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/top_plus_bottom_0.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/top_plus_bottom_1.jpg" %}
+
+Установил пластиковую "опалубку" для заливки наполнителя:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/infill_holder.jpg" %}
+
+Подбор нужного количества шариков:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/steel_balls_count.jpg" %}
+
+Итого, для передней части основания потребуется вот такое количество шариков:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/steel_balls_front.jpg" %}
+
+Разводим силикон в нужной пропорции, засыпаем шарики, помещаем полученный состав внутрь основания. Ждем, пока силикон застынет. Результат:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/silicone_inside.jpg" %}
+
+Ставим крышку на место, прикручиваем винтами. Прикручиваем рабочую часть манипулятора. Приклеиваем резиновые ножки. Финальный результат:
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_0.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_1.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_2.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_3.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_4.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_5.jpg" %}
+
+### Рендеры финальной версии <a name="renders"></a>
+
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_0.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_1.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_2.jpg" %}
+{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_3.jpg" %}
