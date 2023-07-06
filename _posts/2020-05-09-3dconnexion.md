@@ -6,6 +6,10 @@ comments: true
 preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 ---
 
+{% capture images_path %}
+assets/images/posts/{{ page.path | split:"/" | last | split:"." | first }}
+{% endcapture %}
+
 ### Содержание
 1. [Что такое 3DConnexion?](#what_is_3dconnexion)
 2. [Вступление](#intro)
@@ -26,14 +30,13 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 &nbsp;
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/3dconnexion.jpg" %}
+{% include clickableImage.html path=images_path name="3dconnexion.jpg" %}
 
 Более простое объяснение: к примеру, при 3D моделировании необходимо часто менять позицию камеры (чтобы работать над
 разными частями модели). У камеры есть шесть степеней свободы: три линейные (отвечают за позицию камеры в мировой системе координат) + 
 три вращательные (три угла поворота камеры). Шестиосевой манипулятор позволяет управлять всеми этими параметрами:
 
-
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/spacenavigator_control.jpg" %}
+{% include clickableImage.html path=images_path name="spacenavigator_control.jpg" %}
 
 Самое же интересное заключается в том, что этот манипулятор позволяет управлять всеми степенями свободы камеры *одновременно*. По сравнению с использованием просто мыши и клавиатуры, когда для того, чтобы переместить камеру из одного места в другое, да еще и повернуть ее, необходимо совершить кучу действий, шестиосевой манипулятор позволяет сделать то же самое *всего за одно движение*. Это очень удобно и экономит время. Минус: требуется привыкание к такому способу управления (порядка нескольких дней).
 
@@ -47,11 +50,11 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 Стоит также сказать, что я являюсь фанатом вертикальных мышей, вроде таких:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/delux_M618.jpg" %}
+{% include clickableImage.html path=images_path name="delux_M618.jpg" %}
 
 Обычные мыши при длительном использовании [вызывают проблемы](https://en.wikipedia.org/wiki/Carpal_tunnel_syndrome), вертикальные мыши от этих проблем спасают:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/carpal_tunnel_syndrome.jpg" %}
+{% include clickableImage.html path=images_path name="carpal_tunnel_syndrome.jpg" %}
 
 Так как изначальная конструкция шестиосевого манипулятора схожа с обычной мышью в смысле плохой эргономичности, было решено сделать для манипулятора новое основание, которое позволило бы руке находиться в удобном положении при работе.
 
@@ -65,23 +68,23 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 Второй вариант выглядел веселее, поэтому был выбран именно он. Решено было использовать пластилин, однако обычный плохо подходит из-за того, что работать с ним довольно сложно -- он весьма жесткий при обычной температуре, из-за чего перед использованием его необходимо разогревать, после чего он начинает мазаться. Был найден более подходящий вариант -- детский пластилин JOVI, который даже при комнатной температуре весьма податлив, работать с ним одно удовольствие:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/jovi.jpg" %}
+{% include clickableImage.html path=images_path name="jovi.jpg" %}
 
 Также, чтобы не пачкать части манипулятора пластилином, был напечатан макет рабочей части:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/handle.jpg" %}
+{% include clickableImage.html path=images_path name="handle.jpg" %}
 
 В итоге получилось это:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/3dconnexion_protorype_1.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/3dconnexion_protorype_2.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/3dconnexion_protorype_3.jpg" %}
+{% include clickableImage.html path=images_path name="3dconnexion_protorype_1.jpg" %}
+{% include clickableImage.html path=images_path name="3dconnexion_protorype_2.jpg" %}
+{% include clickableImage.html path=images_path name="3dconnexion_protorype_3.jpg" %}
 
 ### 3D сканирование <a name="3d_scanning"></a>
 
 Теперь надо оцифровать модель. Для этой цели был куплен 3D сканер начального уровня Ciclop 3D:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/ciclop_3d.jpg" %}
+{% include clickableImage.html path=images_path name="ciclop_3d.jpg" %}
 
 Настройка этого устройства -- отдельная большая проблема, которая достойна отдельной заметки. Также, выяснилось, что пластилиновая модель слишком большая, чтобы быть отсканированной целиком; пришлось разрезать ее пополам, сканировать половинки, после чего сшивать их вместе в 3D редакторе (использовался [Meshmixer](http://www.meshmixer.com/)). 
 
@@ -98,14 +101,14 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 Делаем 3D модель посадочного места для рабочей части манипулятора:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/solidworks_5.jpg" %}
+{% include clickableImage.html path=images_path name="solidworks_5.jpg" %}
 
 Далее закидываем меш основания в SolidWorks, добавляем остальные части: посадочное место для рабочей части манипулятора, отверстие для разъема USB, посадочное место для USB донгла. Получается так:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/solidworks_1.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/solidworks_2.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/solidworks_3.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/solidworks_4.jpg" %}
+{% include clickableImage.html path=images_path name="solidworks_1.jpg" %}
+{% include clickableImage.html path=images_path name="solidworks_2.jpg" %}
+{% include clickableImage.html path=images_path name="solidworks_3.jpg" %}
+{% include clickableImage.html path=images_path name="solidworks_4.jpg" %}
 
 Далее снова экспортируем полученную модель в stl, переходим в Meshmixer, наводим окончательный лоск (заменяем резкие переходы в геометрии скруглениями). Финальный результат:
 
@@ -115,15 +118,15 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 К сожалению, во время печати закончился белый пластик, поэтому маленький кусочек детали пришлось допечатать прозрачным пластиком :)
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_1.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_2.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_3.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_4.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_5.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_6.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_7.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_8.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/result_9.jpg" %}
+{% include clickableImage.html path=images_path name="result_1.jpg" %}
+{% include clickableImage.html path=images_path name="result_2.jpg" %}
+{% include clickableImage.html path=images_path name="result_3.jpg" %}
+{% include clickableImage.html path=images_path name="result_4.jpg" %}
+{% include clickableImage.html path=images_path name="result_5.jpg" %}
+{% include clickableImage.html path=images_path name="result_6.jpg" %}
+{% include clickableImage.html path=images_path name="result_7.jpg" %}
+{% include clickableImage.html path=images_path name="result_8.jpg" %}
+{% include clickableImage.html path=images_path name="result_9.jpg" %}
 
 Проблемы версии 0:
 
@@ -137,7 +140,7 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 Образец получившегося "композитного" материала:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/infill_test.jpg" %}
+{% include clickableImage.html path=images_path name="infill_test.jpg" %}
 
 Далее, для того, чтобы поместить утяжелитель внутрь, необходимо сделать основание полым или же частично полым. Вначале я склонялся ко второму варианту, но потом понял, что первый во многих отношениях лучше. Использовать SolidWorks для этого не получилось: он и так неохотно работает с твердыми телами, полученными из мешей, а применить к такому телу операцию **shell** и вовсе оказалось непосильной задачей. Зато выручил Meshmixer. Интересная подробность: если просто сделать тело полым, то есть убрать из него весь материал, оставив только стенку, результатом будут два отдельных меша; чтобы этого не произошло, необходимо сделать хотя бы одно отверстие в этой стенке. Meshmixer умеет это делать автоматически.
 
@@ -145,11 +148,11 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 В последнюю очередь оптимизировал внешнюю поверхность основания, дабы угол нависания везде был больше 45 градусов. В противном случае слайсер генерирует для внешней поверхность поддержки, которые портят внешний вид, даже если напечатаны отдельным материалом. Было (красным цветом показаны места с углом нависания меньше 45 градусов):
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/external_supports_before.png" %}
+{% include clickableImage.html path=images_path name="external_supports_before.png" %}
 
 Стало:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/external_supports_after.png" %}
+{% include clickableImage.html path=images_path name="external_supports_after.png" %}
 
 Итоговые меши основания и крышки:
 
@@ -160,37 +163,37 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 
 Напечатал основание и крышку, установил вплавляемые гайки:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/top_plus_bottom_0.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/top_plus_bottom_1.jpg" %}
+{% include clickableImage.html path=images_path name="top_plus_bottom_0.jpg" %}
+{% include clickableImage.html path=images_path name="top_plus_bottom_1.jpg" %}
 
 Установил пластиковую "опалубку" для заливки наполнителя:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/infill_holder.jpg" %}
+{% include clickableImage.html path=images_path name="infill_holder.jpg" %}
 
 Подбор нужного количества шариков:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/steel_balls_count.jpg" %}
+{% include clickableImage.html path=images_path name="steel_balls_count.jpg" %}
 
 Итого, для передней части основания потребуется вот такое количество шариков:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/steel_balls_front.jpg" %}
+{% include clickableImage.html path=images_path name="steel_balls_front.jpg" %}
 
 Разводим силикон в нужной пропорции, засыпаем шарики, помещаем полученный состав внутрь основания. Ждем, пока силикон застынет. Результат:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/silicone_inside.jpg" %}
+{% include clickableImage.html path=images_path name="silicone_inside.jpg" %}
 
 Ставим крышку на место, прикручиваем винтами. Прикручиваем рабочую часть манипулятора. Приклеиваем резиновые ножки. Финальный результат:
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_0.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_1.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_2.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_3.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_4.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/final_result_5.jpg" %}
+{% include clickableImage.html path=images_path name="final_result_0.jpg" %}
+{% include clickableImage.html path=images_path name="final_result_1.jpg" %}
+{% include clickableImage.html path=images_path name="final_result_2.jpg" %}
+{% include clickableImage.html path=images_path name="final_result_3.jpg" %}
+{% include clickableImage.html path=images_path name="final_result_4.jpg" %}
+{% include clickableImage.html path=images_path name="final_result_5.jpg" %}
 
 ### Рендеры финальной версии <a name="renders"></a>
 
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_0.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_1.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_2.jpg" %}
-{% include clickableImage.html url="assets/images/posts/2020-05-09-3dconnexion/render_3.jpg" %}
+{% include clickableImage.html path=images_path name="render_0.jpg" %}
+{% include clickableImage.html path=images_path name="render_1.jpg" %}
+{% include clickableImage.html path=images_path name="render_2.jpg" %}
+{% include clickableImage.html path=images_path name="render_3.jpg" %}
