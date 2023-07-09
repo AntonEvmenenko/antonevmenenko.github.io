@@ -1,3 +1,5 @@
+{% assign translations = site.data.translations %}
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +9,9 @@
 
   <title>
     {% if page.title == "Home" %}
-      {{ site.title }}
+      {{ translations.title[page.language] }}
     {% else %}
-      {{ page.title }} &middot; {{ site.title }}
+      {{ page.title }} &middot; {{ translations.title[page.language] }}
     {% endif %}
   </title>
 

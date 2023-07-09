@@ -1,3 +1,9 @@
+{% assign translations = site.data.translations %}
+
+{% capture baseurl %}
+{{ site.baseurl }}{% if page.language != site.default_language %}/{{ page.language }}{% endif %}
+{% endcapture %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +12,18 @@
   <body>
     <nav class="nav">
       <div class="nav-container">
-        <a href="{{ site.baseurl }}/">
-          <h2 class="nav-title">{{ site.title }}</h2>
+        <a href="{{ baseurl }}/">
+          <h2 class="nav-title">{{ translations.title[page.language] }}</h2>
         </a>
         <ul>
-          <li><a href="{{ site.baseurl }}/">Посты</a></li>
-          <li><a href="{{ '/gallery' | prepend: site.baseurl }}">Картинки</a></li>
+          <li><a href="{{ baseurl }}/">{{ translations.posts[page.language] }}</a></li>
+          <li><a href="{{ '/gallery' | prepend: baseurl }}">{{ translations.gallery[page.language] }}</a></li>
           <li><a href="https://github.com/AntonEvmenenko">GitHub</a></li>
+          {% if page.language == 'en' %}
+            <li><a href="{{ site.baseurl }}/ru">RU</a></li>
+          {% else %}
+            <li><a href="{{ site.baseurl }}/">EN</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -25,7 +36,7 @@
 
     <footer>
       <span>
-        Зопилено на Jekyll. Оригинальная тема — <a href="https://github.com/chesterhow/tale/">Tale</a>.
+        {{ translations.footer_text[page.language] }} — <a href="https://github.com/chesterhow/tale/">Tale</a>.
       </span>
     </footer>
   </body>

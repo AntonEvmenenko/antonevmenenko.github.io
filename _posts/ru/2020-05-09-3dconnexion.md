@@ -2,7 +2,6 @@
 layout: post
 title: "3DConnexion SpaceMouse Wireless Ergonomic."
 author: "Антон"
-comments: true
 preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 ---
 

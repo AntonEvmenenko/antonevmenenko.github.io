@@ -1,16 +1,6 @@
-# Site settings
-default_locale: "ru"
-
-title:          Техноблог Антона
 description:    "Minimal Jekyll theme for storytellers"
 baseurl:        ""
-url:            "https://tgsss.github.io"
-
-# Author
-author:
-  name:         Антон
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+url:            "https://antonevmenenko.github.io"
 
 # Build settings
 markdown:       kramdown
@@ -26,6 +16,40 @@ plugins:
   - jekyll-paginate
   # - jemoji #Uncomment this to allow emoji in your post
 
-# Permalinks
-permalink:      /:year-:month-:day/:title
 paginate:       5
+
+default_language: 'en'
+
+defaults:
+- scope:
+    path: 'index.html'
+  values:
+    permalink: ''
+    language: 'en'
+- scope:
+    path: 'index_ru.html'
+  values:
+    permalink: '/ru/'
+    language: 'ru'
+- scope:
+    path: '_posts/en'
+    type: 'posts'
+  values:
+    permalink: 'en/:year-:month-:day/:title'
+    language: 'en'
+- scope:
+    path: '_posts/ru'
+    type: 'posts'
+  values:
+    permalink: 'ru/:year-:month-:day/:title'
+    language: 'ru'
+- scope:
+    path: 'gallery.html'
+  values:
+    permalink: '/gallery/'
+    language: 'en'
+- scope:
+    path: 'gallery_ru.html'
+  values:
+    permalink: '/ru/gallery/'
+    language: 'ru'
