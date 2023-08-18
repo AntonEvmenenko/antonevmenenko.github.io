@@ -1,15 +1,15 @@
-<li style="padding-right: 2rem;"></li>
+<li class="separator"></li>
 
 {% if page.language == 'en' %}
-    <li style="opacity: 1; font-weight: bold; padding-right: 0;"><a href="{{ site.baseurl }}/">EN</a></li>
+    <li class="zeropadding active-language"><a href="{{ site.baseurl }}/">EN</a></li>
 {% else %}
-    <li style="padding-right: 0;"><a href="{{ site.baseurl }}/">EN</a></li>
+    <li class="zeropadding"><a href="{{ site.baseurl }}/">EN</a></li>
 {% endif %}
 
-<li style="padding-right: 0;">|</li>
+<li class="zeropadding">|</li>
 
 {% if page.language == 'ru' %}
-    <li style="opacity: 1; font-weight: bold;"><a href="{{ site.baseurl }}/ru">RU</a></li>  
+    <li class="active-language"><a href="{{ site.baseurl }}/ru">RU</a></li>
 {% else %}
     <li><a href="{{ site.baseurl }}/ru">RU</a></li>  
 {% endif %}
