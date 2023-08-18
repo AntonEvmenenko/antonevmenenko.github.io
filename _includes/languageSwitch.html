@@ -1,0 +1,15 @@
+<li style="padding-right: 2rem;"></li>
+
+{% if page.language == 'en' %}
+    <li style="opacity: 1; font-weight: bold; padding-right: 0;"><a href="{{ site.baseurl }}/">EN</a></li>
+{% else %}
+    <li style="padding-right: 0;"><a href="{{ site.baseurl }}/">EN</a></li>
+{% endif %}
+
+<li style="padding-right: 0;">|</li>
+
+{% if page.language == 'ru' %}
+    <li style="opacity: 1; font-weight: bold;"><a href="{{ site.baseurl }}/ru">RU</a></li>  
+{% else %}
+    <li><a href="{{ site.baseurl }}/ru">RU</a></li>  
+{% endif %}
