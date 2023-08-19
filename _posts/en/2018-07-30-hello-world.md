@@ -4,10 +4,8 @@ title: "Hello, World!"
 author: "Anton"
 ---
 
-For a long time, I have harbored the desire to possess my own blog. And lo and behold, it has finally materialized. Admittedly, if we delve 
-deeper, it may not be entirely my own, as it resides on the hosting platform of Github Pages. However, there is the possibility that one day 
-I will relocate it to a self-owned server, should the opportunity present itself.
+I've wanted to have my own blog for a long time. And here it is, done. Of course, if you dig deeper, it's not exactly my own – I'm using GitHub Pages for hosting. But perhaps someday, I'll move it to my own server (if such an opportunity arises).
 
-Here, I will be sharing information about various things I am doing or have accomplished (although, let's face it, they reach this stage quite rarely).
+I'll be sharing information here about various things I'm working on or have completed (though who am I kidding, they rarely progress to this stage).
 
-Such is the way of things.
+That's how things are.
