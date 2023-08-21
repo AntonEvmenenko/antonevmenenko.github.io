@@ -5,9 +5,7 @@ author: "Антон"
 preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 ---
 
-{% capture images_path %}
-assets/images/posts/{{ page.path | split:"/" | last | split:"." | first }}
-{% endcapture %}
+{% include vars.html %}
 
 ### Содержание
 1. [Что такое 3DConnexion?](#what_is_3dconnexion)

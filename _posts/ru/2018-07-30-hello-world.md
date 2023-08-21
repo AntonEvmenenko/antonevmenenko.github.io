@@ -5,6 +5,10 @@ author: "Антон"
 preview: "assets/images/posts/2018-07-30-hello-world/preview.jpg"
 ---
 
+{% include vars.html %}
+
+{% include clickableImage.html path=images_path name="preview.jpg" %}
+
 Давно хотел заиметь собственный блог. И вот, свершилось. Конечно, если копнуть глубже, не такой уж он и собственный – хостингом 
 выступает Github Pages. Но, возможно, когда-нибудь перенесу его на собственный сервер (если таковой объявится).
 
