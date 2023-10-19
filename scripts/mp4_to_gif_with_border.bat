@@ -9,6 +9,11 @@ set skip=1 & :: seconds
 
 set /a temp=%border_thickness% * 2
 
-ffmpeg -i %input_file% -ss %skip% -filter_complex "[0]crop=w=iw-%crop%:h=ih-%crop%[a];[a]pad=w=%temp%+iw:h=%temp%+ih:x=%border_thickness%:y=%border_thickness%:color=gray" %output_file%
+ffmpeg ^
+    -y ^
+    -i %input_file% ^
+    -ss %skip% ^
+    -filter_complex "fps=10,split[s0][s1];[s0]crop=w=iw-%crop%:h=ih-%crop%[a];[a]pad=w=%temp%+iw:h=%temp%+ih:x=%border_thickness%:y=%border_thickness%:color=gray[b];[s1]palettegen=max_colors=32[p];[b][p]paletteuse=dither=bayer" ^
+    %output_file%
 
 endlocal
