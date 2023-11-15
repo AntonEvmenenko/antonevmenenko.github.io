@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2D Geometric Constraint Solver"
+title: "2D Geometric Constraint Solver."
 author: "Антон"
 preview: "assets/images/posts/2023-10-18-2d-geometric-constraint-solver/preview.gif"
 ---

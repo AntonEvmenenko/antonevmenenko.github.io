@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "3DConnexion SpaceMouse Wireless Ergonomic."
+title: "Ergonomic 3DConnexion SpaceMouse."
 author: "Антон"
 preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 ---
