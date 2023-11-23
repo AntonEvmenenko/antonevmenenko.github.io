@@ -8,27 +8,29 @@ preview: "assets/images/posts/2020-05-09-3dconnexion/render_2.jpg"
 {% include vars.html %}
 
 ### Table of contents
-1. [What is 3DConnexion?](#what_is_3dconnexion)
-2. [Intro](#intro)
-3. [Prototyping](#prototyping)
-4. [3D scanning](#3d_scanning)
-6. [Version 0](#version_0)
-7. [Solving version 0 issues](#version_0_fix_problems)
-8. [Version 1](#version_1)
-9. [Final renders](#renders)
+1. [Intro](#intro)
+1. [3DConnexion?](#what_is_3dconnexion)
+1. [Vertical mice?](#what_is_vertical_mice)
+1. [Prototyping](#prototyping)
+1. [3D scanning](#3d_scanning)
+1. [Version 0](#version_0)
+1. [Solving version 0 issues](#version_0_fix_problems)
+1. [Version 1](#version_1)
+1. [Final renders](#renders)
 
-### What is 3DConnexion? <a name="what_is_3dconnexion"></a>
+### Intro <a name="intro"></a>
 
 <!--excerpt-->
 
-A brief description of the device that will be discussed further:
+I really like two things. The first one is 3D manipulators produced by 3Dconnexion. The second one is vertical mice. I decided to try combining the best of them into one device.
+
+Since the original design of 3Dconnexion manipulators is not perfect in terms of ergonomics, I decided to attempt creating a new base for the manipulator, drawing inspiration from the example of vertical mice.
+
+### 3DConnexion? <a name="what_is_3dconnexion"></a>
 
 > The 3D manipulator (or 3D mouse) by 3Dconnexion is a device designed for three-dimensional positioning using a ball or joystick (6 degrees of freedom). It is used for working with 3D design systems or applications that require control over an objects' movements within a virtual space.
 
-&nbsp;
-
 {% include clickableImage.html path=images_path name="3dconnexion.jpg" %}
-
 
 For instance, in 3D modeling, it's often necessary to adjust the camera's position (to work on different parts of the model). The camera has six degrees of freedom: three linear ones (which determine the camera's position in the global coordinate system) and three rotational ones (representing the camera's rotation angles). A six-axis manipulator enables control over all these parameters:
 
@@ -36,23 +38,15 @@ For instance, in 3D modeling, it's often necessary to adjust the camera's positi
 
 The most interesting aspect is that this manipulator allows you to control all degrees of freedom of the camera *simultaneously*. Compared to using just a mouse and keyboard, where you need to perform a series of actions to move the camera from one place to another and rotate it, a six-axis manipulator enables you to achieve the same result in a single motion. This is highly convenient and time-saving. Downside: getting used to this method of control takes a bit of time (several days or so).
 
-### Intro <a name="intro"></a>
+### Vertical mice? <a name="what_is_vertical_mice"></a>
 
-Buying a brand new device from a store was a bit expensive (plus, I wasn't entirely sure if I really needed it), so I periodically checked a local online flea market. After some time, luck was on my side, and I managed to purchase the device. Immediately, the following issues were identified:
-
-1. It turned out that the SoftTouch coating applied to the working part of the manipulator deteriorates over time and becomes sticky. The solution was straightforward: armed with isopropyl alcohol, cotton pads and wipes, I simply removed it. The plastic underneath was also quite pleasant to touch, and there were no problems due to the removal of the coating.
-
-2. The metallic base of the device, covered with something like decorative chrome, had some scratches. Of course, this problem didn't hinder the device's functionality in any way, but it was a constant eyesore and source of annoyance. I decided to tackle this issue with a more drastic solution, which will be discussed in the following paragraphs.
-
-It's worth saying that I'm a fan of vertical mice, like the ones depicted below:
+Yes, I'm a fan of vertical mice, like the one depicted below:
 
 {% include clickableImage.html path=images_path name="delux_M618.jpg" %}
 
 Regular mice, when used extensively, can lead to issues like [carpal tunnel syndrome](https://en.wikipedia.org/wiki/Carpal_tunnel_syndrome), whereas vertical mice help alleviate these problems:
 
 {% include clickableImage.html path=images_path name="carpal_tunnel_syndrome.jpg" %}
-
-Since the original design of the six-axis manipulator resembled a regular mouse in terms of poor ergonomics, a decision was made to create a new base for the manipulator, which would allow the hand to be in a comfortable position while working.
 
 ### Prototyping <a name="prototyping"></a>
 
